@@ -76,44 +76,66 @@
 - **Plastic**
 <p align=justify> Floating plastic debris data are scarce. We gathered 206 pixels of plastic that are confirmed by scientific reports, news articles or pictures on
 	social media posts (in situ data). Every pixel's spectral response was manually inspected and compared to the expected spectral signature in the
-	literature \cite{thirty,thirty_seven}, and the ones that did not meet the requirements were rejected. Therefore, many pixels identified as suspected
+	literature <b>[1]</b>, <b>[4]</b>, and the ones that did not meet the requirements were rejected. Therefore, many pixels identified as suspected
 	plastic in scientific reports were discarded. From the 206 pixels, 102 were taken from Sentinel-2A images and 107 from Sentinel-2B imagery.
-	Around 42% of the data, corresponding to 88 pixels, are from artificial plastic targets deployed in the ocean in the Gulf of Gera \cite{twenty_seven}, 
-	Tsamakia beach \cite{twenty_five,twenty_six}, and Limassol \cite{twenty_eight}. The remaining 58% result from 
+	Around 42% of the data, corresponding to 88 pixels, are from artificial plastic targets deployed in the ocean in the Gulf of Gera <b>[5]</b>, 
+	Tsamakia beach <b>[6]</b>, <b>[7]</b>, and Limassol <b>[8]</b>. The remaining 58% result from 
 	observations and reports of plastic floating in the marine environment. On the 23$^{rd}$ of April 2019, substantial quantities of plastic covered
-	the Durban harbour, in South Africa, after a flood event \cite{thirty_eight}. The debris eventually washed out to the sea, and a Sentinel-2 image
+	the Durban harbour, in South Africa, after a flood event. The debris eventually washed out to the sea, and a Sentinel-2 image
 	from the following day allowed the detection of 72 pixels with spectral reflectance similar to plastic. The remaining pixels result from the work
-	of Kikaki et al. \cite{twenty_nine} and their observations over the Bay Islands and Gulf of Honduras.
+	of Kikaki et al. <b>[9]</b> and their observations over the Bay Islands and Gulf of Honduras.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176547565-494e5e0d-adc4-4cc2-9e1d-92d6400a1162.png" width="550"> </p>
 <p align=center> <b> Figure 3: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of plastic pixels after atmospheric correction.
 	
+<p align=justify> The spectral signature of plastic is characterized by two reflectance peaks, one centred at <b>B3</b> and the other at <b>B8</b>, and one absorption peak centred at the fifth Sentinel-2 spectral band (<b>B5</b>). It is also clear that plastic has higher reflectance values in all spectral bands compared to the water spectral signature.
+	
 - **Driftwood**
+
+<p align=justify> Driftwood is wood that has been washed into the ocean through the action of natural occurrences such as winds or flooding, or because of logging. Its study is of great interest in many research fields. For example, in geomorphology, knowing the accumulation rates of wood in rivers may help in creating measures concerning the maintenance of watercourses and assist in risk management. However, it is challenging to find these pixels in Sentinel-2 images since it is not common to exist significant accumulations of driftwood. 
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548225-dc41767e-bc94-4729-98c1-30e23225703d.png" width="550"> </p>
 <p align=center> <b> Figure 4: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of driftwood after atmospheric correction.
 	
+<p align=justify> PLP 2021 <b>[5]</b> allowed the collection of 62 pixels of driftwood on thirteen different days since they deployed a wooden target that simulates natural driftwood. Around 55% of these pixels were taken from Sentinel-2A images and the remaining from Sentinel-2B. Driftwood shows substantially more reflectance when compared to water or plastic, and it has two reflectance peaks in the fourth (<b>B4</b>) and eighth (<b>B8</b>) Sentinel-2 spectral bands.
+	
 - **Seaweed**
+	
+<p align=justify> Seaweed is the common name for countless species of marine plants and algae that grow in the ocean. There are several types of seaweed, but the most prevalent is the Sargassum or brown algae, which floats in large masses and even inspired the name of a region in the Atlantic Ocean, the Sargasso Sea. Its presence in the ocean is essential since it provides nutrients and shelter for many marine organisms, but too much seaweed can be harmful. Substantial accumulations of seaweed may block sunlight, preventing the seagrass below from growing and, when decomposing, its organic matter removes oxygen from the water. This work does not focus on differentiating the distinct species of seaweed, as its goal is to discriminate floating debris, and considerable variations in the various seaweed reflectance are not expected. One Sentinel-2B image from October 2018 was used to collect 150 pixels of seaweed in the coastal waters of Accra, Ghana. The seaweed's spectral signature coincides with the literature <b>[1]</b>, <b>[4]</b> since it presents a sharp increase in reflectance in the fourth Sentinel-2 spectral band (<b>B4</b>), followed by a fall in the band <b>8A</b>, being very distinct from the spectral responses of water, plastic and driftwood. Also, the standard deviation reveals that there is not much dispersion in the data relative to the mean before the reflection peak.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548273-9c0736bf-9789-4099-8c86-b34f73d35d67.png" width="550"> </p>
 <p align=center> <b> Figure 5: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of seaweed after atmospheric correction.
 	
+<p align=justify> 
+	
 - **Pumice**
+	
+<p align=justify> Pumice is a light-coloured volcanic rock with a foamy appearance. It is formed when super-heated and highly pressurized molten rock, magma, is powerfully ejected from a volcano and rapidly cools down, which commonly happens in underwater eruptions. Pumice is so light that it may float on water for years, potentially forming gigantic floating islands (pumice rafts). These pumice rafts are considered a danger to navigation since they can cause damage to cargo vessels and mess up with radar signals. For example, tankers carry thousands of tonnes of oil and, if damaged from a collision, can provoke a massive environmental disaster. Hence, information on the location and course of pumice rafts can be valuable for the shipping industry.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548351-9c14f5d6-976d-4bd3-b65a-2633c8397388.png" width="550"> </p>
 <p align=center> <b> Figure 6: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of pumice and plastic after atmospheric correction.
 	
+<p align=justify> In October 2021, a large underwater volcanic eruption spewed massive amounts of floating pumice stones that littered coastlines in Okinawa, Japan, damaging dozens of fishing vessels and forcing a large percentage to remain stuck at ports. A Sentinel-2A image from 26 October 2021 reveals thousands of bright pixels containing floating pumice stone and was used to collect 31098 pixels of this floating material. Pumice's reflectance values are close to the plastic mean spectral signature. However, plastic presents an absorption peak in the fifth spectral band (<b>B5</b>), which does not happen with pumice. Pumice's standard deviation reveals a lot of dispersion relative to the mean reflectance, which may be a consequence of different floating depths in different pixels. Pixels where pumice floats on the ocean's surface will have higher reflectance values than ones where pumice is slightly submerged.
+	
 - **Sea Snot**
+	
+<p align=justify> Marine mucilage, also known as sea snot, is a thick slimy organic substance that floats on the ocean. It forms when algae are overloaded with nutrients because of global warming and water pollution that results from industrial waste dumped into the seas. Warmer and slower-moving waters also increase the production of sea snot and allow its accumulation. Marine mucilage surge poses severe threats to public health since it contains bacteria, transports diseases, and has adverse economic and environmental consequences. This substance harshly affects the fishing industry as it clogs fishing nets, removes oxygen from the water and limits sunlight from reaching marine ecosystems, killing sea creatures. There are several reports of sea snot outbreaks in the last few years, however, none of them reaches the level of the one in the Marmara Sea, Turkey, in 2021. Short-term countermeasures include laying barriers on the sea surface and collecting the substance. On the other hand, long-term countermeasures comprise improving wastewater treatment and imposing fines on companies that dump industrial waste in the ocean. 
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548391-de3c86e2-b49f-46fd-9d4a-98019925baa1.png" width="550"> </p>
 <p align=center> <b> Figure 7: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of sea snot and plastic after atmospheric correction.
 	
+<p align=justify> One Sentinel-2B image from the Marmara Sea, on the 6$^{th}$ of June 2021, showed thousands of pixels containing sea snot. From those, 26403 pixels were selected. By examining Figure 7, it is clear why Hu et al. <b>[10]</b> concluded that remote differentiation of sea snots and marine debris using multi-band sensors is problematic. The two classes show a similar mean spectral reflectance, except in the eighth Sentinel-2 spectral band (<b>B8</b>), where plastics have a reflectance peak. In contrast to plastic, sea snot's standard deviation reveals a lot of dispersion, which probably results from different floating depths in different pixels, just like pumice.
+	
 - **Sea Foam**
+	
+<p align=justify> The model from Biermann et al. <b>[1]</b> showed some difficulties in distinguishing plastic from sea foam, bubbles, and froth, so this group of substances was included in this study. A Sentinel-2A image from Vigo Ria in Galicia, Spain, was used to gather 2735 pixels and study sea foam's spectral behaviour. Sea foam presents a small reflectance peak in the early spectral bands and another one in the eighth Sentinel-2 band (<b>B8</b>), just like the plastic mean spectral signature. These features, adding to the relatively high standard deviation, suggest that sea foam might be confused with plastic.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548420-cba2b7ce-3aed-475a-941f-9ef46d67bab6.png" width="550"> </p>
 <p align=center> <b> Figure 8: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of sea foam and plastic after atmospheric correction.
 	
 ### Summary
+	
+<p align=justify> With all data gathered from common floating classes such as seaweed, sea foam and driftwood, and from substances that, despite not being so common, can provoke harmful environmental consequences such as sea snot and pumice, it is possible to compare all spectral signatures to plastic. Both driftwood and seaweed have very high reflectance in the eighth Sentinel-2 spectral band, making them distinguishable from all other materials. Driftwood has a reflectance peak where seaweed has an absorption peak, so they are also distinct from each other. As expected, water has lower reflectance than all other classes thanks to its high heat capacity. On the other hand, separating plastic from pumice, sea snot, and sea foam based on spectral responses is challenging. Therefore, using spectral indices, which are mathematical equations that combine values from two or more wavelengths enhancing spectral features that were not visible initially, is appropriate.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548705-ef6f5da1-1339-466a-9a01-aecb4f4f0106.png" width="650"> </p>
 <p align=center> <b> Figure 9: </b> Spectral signatures derived from the mean reflectance of all data after atmospheric correction.
@@ -124,23 +146,32 @@
 	
 
 ### References
-**[1]** L. Biermann, D. Clewley, V. Martinez-Vicente, and K. Topouzelis, “Finding Plastic Patches in Coastal Waters using Optical Satellite Data,” 
+<p align=justify> <b>[1]</b> L. Biermann, D. Clewley, V. Martinez-Vicente, and K. Topouzelis, “Finding Plastic Patches in Coastal Waters using Optical Satellite Data,” 
 	Scientific Reports, vol. 10, p. 1–10, 2020.
 	
-**[2]** B. Basu, S. Sannigrahi, A. Sarkar Basu, and F. Pilla, “Development of Novel Classification Algorithms for Detection of Floating Plastic Debris 
-	in Coastal Waterbodies Using Multispectral Sentinel-2 Remote Sensing Imagery,” Remote Sensing, vol. 13, no. 8, 2021.
+<p align=justify> <b>[2]</b> B. Basu, S. Sannigrahi, A. Sarkar Basu, and F. Pilla, “Development of Novel Classification Algorithms for Detection of Floating Plastic Debris in Coastal Waterbodies Using Multispectral Sentinel-2 Remote Sensing Imagery,” Remote Sensing, vol. 13, no. 8, 2021.
 	
-**[3]** Quinten Vanhellemont, Kevin Ruddick, "Atmospheric correction of metre-scale optical satellite data for inland and coastal water applications," 
+<p align=justify> <b>[3]</b> Q. Vanhellemont, K. Ruddick, "Atmospheric correction of metre-scale optical satellite data for inland and coastal water applications," 
 	Remote Sensing of Environment, vol. 216, pp. 586-597, 2018.
 	
-**[4]** 
+<p align=justify> <b>[4]</b> P. Tasseron, T. van Emmerik, J. Peller, L. Schreyers, and L. Biermann, "Advancing Floating Macroplastic Detection from Space Using Experimental Hyperspectral Imagery," Remote Sensing, vol. 13, no. 2335, 2021.
+
+<p align=justify> <b>[5]</b> Marine Remote Sensing Group, "Plastic Litter Project 2021," http://plp.aegean.gr/plastic-litter-project-2021/.
 	
-**[5]** 
+<p align=justify> <b>[6]</b> K. Topouzelis, A. Papakonstantinou, and S. P. Garaba, "Detection of floating plastics from satellite and unmanned aerial systems (Plastic Litter Project 2018)," International Journal of Applied Earth Observation and Geoinformation, vol. 79, pp. 175-183, 2019.
 	
-**[6]** 
+<p align=justify> <b>[7]</b> K. Topouzelis, D. Papageorgiou, A. Karagaitanakis, A. Papakonstantinou, and M. Arias Ballesteros, "Remote Sensing of Sea Surface Artificial Floating Plastic Targets with Sentinel-2 and Unmanned Aerial Systems (Plastic Litter Project 2019)," Remote Sensing, vol. 12, no. 2013, 2020.
 	
-**[7]** 
+<p align=justify> <b>[8]</b> K. Themistocleous, C. Papoutsa, S. Michaelides, and D. Hadjimitsis, "Investigating Detection of Floating Plastic Litter from Space Using Sentinel-2 Imagery," Remote Sensing, vol. 12, no. 2648, 2020.
 	
-**[8]** 
+<p align=justify> <b>[9]</b> A. Kikaki, K. Karantzalos, C. A. Power, and D. E. Raitsos, "Remotely Sensing the Source and Transport of Marine Plastic Debris in Bay Islands of Honduras (Caribbean Sea)," Remote Sensing, vol. 12, no. 1727, 2020.
+	
+<p align=justify> <b>[10]</b> C. Hu, L. Qi, Y. Xie, S. Zhang, and B. B. Barnes, "Spectral characteristics of sea snot reflectance observed from satellites: Implications for remote sensing of marine debris," Remote Sensing of Environment, vol. 269, 2022.
+	
+**[11]** 
+	
+**[12]** 
+	
+**[13]** 
 	
 <p align=right> <i><b>Authors</b>: Miguel M. Duarte and Leonardo Azevedo.</i>
