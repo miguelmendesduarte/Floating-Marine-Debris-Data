@@ -169,6 +169,8 @@
 	
 	1434 synthetic pixels from each class, generated from a WGAN.
 
+<p align=right> <i><b>Authors</b>: Miguel M. Duarte and Leonardo Azevedo.</i>
+	
 ### References
 <p align=justify> <b>[1]</b> L. Biermann, D. Clewley, V. Martinez-Vicente, and K. Topouzelis, “Finding Plastic Patches in Coastal Waters using Optical Satellite Data,” 
 	Scientific Reports, vol. 10, p. 1–10, 2020.
@@ -193,5 +195,3 @@
 <p align=justify> <b>[10]</b> C. Hu, L. Qi, Y. Xie, S. Zhang, and B. B. Barnes, "Spectral characteristics of sea snot reflectance observed from satellites: Implications for remote sensing of marine debris," Remote Sensing of Environment, vol. 269, 2022.
 	
 <p align=justify> <b>[11]</b> M. Arjovsky, S. Chintala, and L. Bottou, “Wasserstein GAN,” 2017.
-
-<p align=right> <i><b>Authors</b>: Miguel M. Duarte and Leonardo Azevedo.</i>
