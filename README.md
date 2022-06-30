@@ -147,13 +147,7 @@
 <p align=center> <b> Figure 10: </b> Comparison between mean (lines) and standard deviation (shaded areas) of the spectral reflectance values from every class of real pixels and synthetic pixels generated from a WGAN (in red).
 	
 ## Data Sets
-- Label = 1 (<b>WATER</b>)
-- Label = 2 (<b>PLASTIC</b>)
-- Label = 3 (<b>DRIFTWOOD</b>)
-- Label = 4 (<b>SEAWEED</b>)
-- Label = 5 (<b>PUMICE</b>)
-- Label = 6 (<b>SEA_SNOT</b>)
-- Label = 7 (<b>SEA_FOAM</b>)
+<p align=center> Label = 1 (<b>WATER</b>), 2 (<b>PLASTIC</b>), 3 (<b>DRIFTWOOD</b>), 4 (<b>SEAWEED</b>), 5 (<b>PUMICE</b>), 6 (<b>SEA_SNOT</b>), 7 (<b>SEA_FOAM</b>).
 	
  > ALL_data.csv
 	
