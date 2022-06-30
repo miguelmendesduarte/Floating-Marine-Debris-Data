@@ -141,6 +141,11 @@
 <p align=center> <b> Figure 9: </b> Spectral signatures derived from the mean reflectance of all data after atmospheric correction.
 	
 ## Synthetic Data
+
+<p align=justify> Despite the efforts in gathering public domain samples of the different floating materials, the number of samples obtained is relatively small for automatic classification algorithms. A usual procedure to overcome this limitation is applying data augmentation methods. Data augmentation methods enable the classification models to learn from a variety of data that could not be gathered in the data acquisition step, making them more robust, and reducing the time-consuming process of collecting and labelling data. In this work, making minor changes in the original data, such as rotating, cropping, zooming or grayscaling is not possible, and slightly changing the values of the spectral bands may create spectral responses that do not represent any floating class. We used of a Wasserstein Generative Adversarial Network (WGAN) <b>[11]</b> to generate <b>1434 synthetic pixels from each class</b> that replicate patterns and features of the actual data, and to assess if artificial data sets are a solution for the lack of floating plastic data.
+	
+<p align=center> <img src="https://user-images.githubusercontent.com/106109897/176710844-a90f1229-e1ec-4603-90df-31a4fb7fff93.png" width="650"> </p>
+<p align=center> <b> Figure 10: </b> Comparison between mean (lines) and standard deviation (shaded areas) of the spectral reflectance values from every class of real pixels and synthetic pixels generated from a WGAN (in red).
 	
 ## Data Sets
 	
@@ -168,10 +173,6 @@
 	
 <p align=justify> <b>[10]</b> C. Hu, L. Qi, Y. Xie, S. Zhang, and B. B. Barnes, "Spectral characteristics of sea snot reflectance observed from satellites: Implications for remote sensing of marine debris," Remote Sensing of Environment, vol. 269, 2022.
 	
-**[11]** 
-	
-**[12]** 
-	
-**[13]** 
-	
+<p align=justify> <b>[11]</b> M. Arjovsky, S. Chintala, and L. Bottou, “Wasserstein GAN,” 2017.
+
 <p align=right> <i><b>Authors</b>: Miguel M. Duarte and Leonardo Azevedo.</i>
