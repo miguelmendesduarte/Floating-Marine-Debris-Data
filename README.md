@@ -146,7 +146,7 @@
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176710844-a90f1229-e1ec-4603-90df-31a4fb7fff93.png" width="650"> </p>
 <p align=center> <b> Figure 10: </b> Comparison between mean (lines) and standard deviation (shaded areas) of the spectral reflectance values from every class of real pixels and synthetic pixels generated from a WGAN (in red).
 	
-## Data Sets
+## Data Sets and Python file
 <p align=center> Label = 1 (<b>WATER</b>), 2 (<b>PLASTIC</b>), 3 (<b>DRIFTWOOD</b>), 4 (<b>SEAWEED</b>), 5 (<b>PUMICE</b>), 6 (<b>SEA_SNOT</b>), 7 (<b>SEA_FOAM</b>).
 	
  > ALL_data.csv
@@ -168,7 +168,11 @@
  > balanced_quality_data.csv
 	
 	1434 synthetic pixels from each class, generated from a WGAN.
-
+	
+ > indices_and_order.py
+	
+	Inserts all spectral indices studied under the scope of this work in the selected data set, and orders the columns.
+	
 <p align=right> <i><b>Authors</b>: Miguel M. Duarte and Leonardo Azevedo.</i>
 	
 ### References
