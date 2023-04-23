@@ -2,11 +2,10 @@ import pandas as pd
 
 
 def add_indices(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Adds spectral indices to the dataframe given as input (with spectral bands) and returns the new dataframe.
+    """Adds spectral indices to the dataframe given as input (with spectral bands) and returns the new dataframe.
 
         Parameters:
-            df (pd.DataFrame): A "pandas" dataframe
+            df (pd.DataFrame): A "pandas" dataframe with Sentinel-2 spectral bands
         
         Returns:
             df (pd.DataFrame): Updated "pandas" dataframe with spectral indices

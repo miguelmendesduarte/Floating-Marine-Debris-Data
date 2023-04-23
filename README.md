@@ -1,178 +1,140 @@
-<p align=center> <img src="https://user-images.githubusercontent.com/106109897/176538014-233c50c4-3c7d-43ea-87f1-e343f96c8a77.jpg"> </p>
+<p align=center><img src="https://user-images.githubusercontent.com/106109897/176538014-233c50c4-3c7d-43ea-87f1-e343f96c8a77.jpg"></p>
 
-# [*Data*] Automatic Detection of Floating Marine Debris Using Multi-Spectral Satellite Imagery
-<p align=justify> Plastic pollution represents a major environmental threat to the maritime environment. Floating plastic debris drift autonomously in our oceans 
-	endangering ecosystems and marine life. Therefore, there is the need to develop and implement efficient tools to detect, capture and remove floating plastic 
-	debris from our oceans.
+# [*Data*] Automatic Detection and Identification of Floating Marine Debris Using Multi-Spectral Satellite Imagery
+<p align=justify> Floating plastic debris that drift autonomously in our oceans are a significant environmental threat to marine life and ecosystems, making it crucial to develop and implement efficient tools to detect, capture, and eliminate such pollution from our oceans.</p>
 
-<p align=justify> Earth observation data have shown early promising results to detect marine plastic debris accumulations (e.g. <b>[1]</b>, <b>[2]</b>). 
-	Satellites are a reliable data source thanks to their spatial and temporal resolution, efficiency in covering extensive areas without human interaction 
-	and their effectiveness. However, the automatic classification of floating plastic debris from satellite data is not straightforward. Every study highlights 
-	the need for more plastic data collected globally, since the best results were achieved by supervised classification methods (highly dependent on the training
-	samples).
+<p align=justify> Earth observation data have shown early promising results to detect marine plastic debris accumulations (e.g. <b>[1]</b>, <b>[2]</b>). Satellites are a reliable source of data due to their spatial and temporal resolution, extensive coverage, and efficiency in covering vast areas without human interaction. However, the automatic classification of floating plastic debris from satellite data is not simple, and supervised classification methods depend heavily on the availability of training samples.</p>
 
-<p align=justify> The data acquisition process in this work (through the literature, news articles, and social media posts) allowed the collection of the 
-	<b>largest data set related to floating plastic debris in satellite (Sentinel-2) imagery that is freely available</b>. Besides floating plastic debris 
-	and water data, we collected data from five other classes of floating debris: driftwood, seaweed, pumice, sea snot, and sea foam. Our work proves that 
-	plastic is detectable and distinguishable from every class in the data set.
+<p align=justify> In this project, we collected data from literature, news articles, and social media posts resulting in <b>the most extensive freely available data set related to suspect floating plastic debris in satellite (Sentinel-2) imagery</b>. Besides suspect plastics and water data, we collected data from five other classes of floating debris: driftwood, seaweed, pumice, sea snot, and sea foam. Our findings indicate that plastic can be detected and differentiated from every other class in the data set.</p>
+
+## Purpose of This Repository
+<p align="justify"><em>This repository contains valuable satellite data on floating marine debris, and by sharing it, we hope to encourage the scientific community to make their data more accessible as well. With accessible data, we can work together to develop innovative solutions to tackle the pressing issue of marine debris in our oceans. Let's collaborate to make a positive impact on our environment.</em></p>
+
+<em>Thank you for your interest in this project!</em>
 
 ## Table of contents
 - [Satellite](#satellite)
 - [Data Pre-processing](#data-pre-processing)
-- [Data Overview](#data-overview) 
+- [Data Overview](#data-overview)
+	- [Water](#water)
+	- [Plastic](#plastic)
+	- [Driftwood](#driftwood)
+	- [Seaweed](#seaweed)
+	- [Sea Snot](#sea-snot)
+	- [Sea Foam](#sea-foam)
 - [Synthetic Data](#synthetic-data)
 - [Data Sets](#data-sets)
+- [Citation](#citation)
+- [Acknowledgements](#acknowledgements)
+- [License](#license)
 - [References](#references)
 	
 ## Satellite
-<p align=justify> This work uses freely available satellite data products from the Sentinel-2 mission, which comprises a constellation of two identical satellites, 
-	Sentinel-2A and Sentinel-2B, developed and operated by the European Space Agency under the Copernicus Programme. It provides <b>systematic coverage</b> (5 days at 
-	the equator and 2 to 3 days at mid-latitudes) over all coastal waters up to 20 km from the shore. Each satellite has a multi-spectral instrument aboard that works 
-	passively (i.e., it measures the sunlight reflected from the Earth). Its optical data is of <b>high spatial resolution</b> (10 m, 20 m, or 60 m, depending
-	on the spectral band). To detect floating plastic, the most crucial feature of the instrument besides the spatial resolution is its <b>radiometric resolution</b>,
-	which is the instrument's capacity to distinguish differences in light intensity or reflectance and typically ranges from 8 to 16 bits. The greater the 
-	total number of discrete signals that the sensor can record (spectral bands), the greater the radiometric resolution and the more accurate the image is.
-	Sentinel-2 has 13 spectral bands that range from the visible and near-infrared (NIR) to the short-wave infrared (SWIR), shown in Table 1, allowing for a 12-bit 
-	radiometric resolution and enabling the image to be acquired over a range of 0 to 4095 potential light intensity values. 
-	All these features, as well as being used by most studies whose goal is to detect and monitor floating debris, make <b>Sentinel-2 a preferential 
-	option for acquiring multi-spectral floating plastic data</b>.
+<p align=justify> The study employs satellite data products from the Sentinel-2 mission, which consists of two identical satellites, Sentinel-2A and Sentinel-2B, developed and managed by the European Space Agency under the Copernicus Programme. These satellites offer <b>systematic coverage</b> of all coastal waters up to 20 km from the shore with a temporal resolution of 5 days at the equator and 2 to 3 days at mid-latitudes. Each satellite has a multi-spectral instrument that measures sunlight reflected from the Earth (i.e., works passively), providing <b>high spatial resolution</b> (10 m, 20 m, or 60 m, depending on the spectral band). The instrument's <b>radiometric resolution</b>, which determines its ability to distinguish differences in light intensity or reflectance, is essential for detecting floating plastic and ranges from 8 to 16 bits. Sentinel-2 has 13 spectral bands that cover the visible and near-infrared (NIR) to the short-wave infrared (SWIR), enabling a 12-bit radiometric resolution and allowing the image to be acquired over a range of 0 to 4095 potential light intensity values, as shown in Table 1. These features, coupled with their widespread use in studies aimed at detecting and monitoring floating debris, make <b>Sentinel-2 the ideal choice for acquiring multi-spectral floating plastic data</b>.</p>
 	
-<p align=center> <b> Table 1: </b> Sentinel-2 spectral bands, their central wavelengths and spatial resolutions.
-<p align=center> <img src="https://user-images.githubusercontent.com/106109897/176535767-ac53970f-eb30-469a-9cd2-f97ca1c0f3b2.PNG" width="650"> </p>
+<p align=center><b>Table 1:</b> Sentinel-2 spectral bands, central wavelengths and spatial resolutions.</p>
+<p align=center><img src="images/sentinel2.png" width="650"></p>
 	
 ## Data Pre-processing
-<p align=justify> Unlike UAVs data, where the atmospheric effects are not considered because of the negligible path from the sensor to the observation sensor, 
-	satellite images require a correction method to remove the contribution of the atmosphere from the multi-spectral instrument's measurements. 
-	To perform the atmospheric correction of the Sentinel-2 images we applied the Dark Spectrum Fitting algorithm (DSF) from the Atmospheric Correction for 
-	OLI ’lite’ (<b>ACOLITE</b>) <b>v.20210802.0</b> software <b>[3]</b>. This method assumes that the atmosphere is homogeneous, and that the scene contains pixels 
-	with zero or very close to zero surface reflectance in at least one of the sensor bands (i.e., dark pixels). The spectral signature of the dark pixels, 
-	or dark spectrum, is then used to determine the best fitting combination of the spectral band and aerosol model for the atmospheric correction. 
-	With the most appropriate combination selected, the parameters required for the ”path-corrected” reflectance computation are then chosen from a look-up table. 
-	Due to low atmospheric transmittance, band 9 (<b>B9</b>) and band 10 (<b>B10</b>) are excluded from the outputs.
-	
-## Data Overview
-	
-- **Water**
+<p align=justify> Satellite images require correction methods to remove the atmospheric contribution from the multi-spectral instrument's measurements, unlike UAV data where atmospheric effects are negligible due to the short path from the sensor to the observation sensor. To achieve atmospheric correction of the Sentinel-2 images, the study utilized the Dark Spectrum Fitting algorithm (DSF) from the Atmospheric Correction for OLI 'lite' (<b>ACOLITE</b>) v.20210802.0 software <b>[3]</b>. The DSF algorithm presumes the homogeneity of the atmosphere and the existence of dark pixels, which have close to zero surface reflectance in one or more of the sensor bands, in the scene. The spectral signature of these dark pixels, also known as the dark spectrum, is then used to select the best-fitting combination of spectral band and aerosol model for atmospheric correction. The parameters needed for "path-corrected" reflectance computation are then chosen from a look-up table, based on the selected combination. Due to low atmospheric transmittance, band 9 (B9) and band 10 (B10) are not included in the outputs.</p>
 
-<p align=justify> Every day, the Sentinel-2 constellation gathers millions of pixels of ocean water. In this work, 150 pixels of ocean water were collected equally
-	from two distinct locations: the Caribbean Sea and the Gulf of Gera, in fifteen different days. From the 150 pixels, 121 are from the Sentinel-2A
-	and the remaining from the Sentinel-2B. Also, 25% of the water data, corresponding to 30 pixels, are from waters where the bottom of the ocean is
-	visible, resulting in brighter pixels. This suggests that different water depths match different spectral reflectance. Waters closer to land usually 
-	have shallower depth, so the ocean floor reflects sunlight, in contrast to waters far from the shore, where most of the light is absorbed. 
-	Figure 1 confirms the assumption since shallower waters exhibit higher reflectance in all spectral bands. 
+## Data Overview
+- #### Water
+<p align=justify>On a daily basis, the Sentinel-2 constellation captures millions of pixels of ocean water. For this study, 150 pixels of ocean water were selected from two distinct locations - the Caribbean Sea and the Gulf of Gera - over a period of fifteen days. Out of the 150 pixels, 121 were collected by Sentinel-2A and the remaining by Sentinel-2B. Furthermore, 30 pixels, which correspond to 25% of the water data, were collected from areas where the ocean floor is visible, resulting in brighter pixels. This observation suggests that different water depths correspond to different levels of spectral reflectance. Waters situated closer to the shoreline tend to be shallower, causing the ocean floor to reflect sunlight, whereas waters located further away from the shore tend to absorb most of the light. As depicted in Figure 1, this assumption is supported by the fact that shallower waters exhibit a higher level of reflectance across all spectral bands.</p>
 
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176547429-0e87e65a-3dc0-42bd-8ed0-70457429c6cb.png" width="550"> </p>
-<p align=center> <b> Figure 1: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of Sentinel-2 water pixels of different depths after atmospheric correction.
+<p align=center> <b> Figure 1:</b> Spectral reflectance of water pixels captured by the Sentinel-2, with varying depths, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.</p>
 	
-<p align=justify> Overall, the spectral signatures are identical except in the third band, where shallow depth water reflectance doubles the one from the deep water.
-	By comparing these spectral signatures with the ones in <b>[1]</b>, it is safe to assume that the reflectance of shallower waters is not high 
-	enough for it to be mistaken for another material, and it is not so different from the deeper waters' reflectance. Therefore, there is no need to
-	create two distinct categories and all the data are grouped into a single class (water) with a spectral signature shown in Figure 2.
+<p align=justify>In general, the spectral responses of the water pixels are almost identical, except on the third band, where the reflectance of shallow water doubles that of deeper water. By comparing these responses with those presented in reference <b>[1]</b>, we can infer that the reflectance of shallow water is not significantly different from that of deeper water and is not high enough to be confused with other materials. Hence, there is no requirement for two separate categories, and all the data are grouped into a single class - water - with a spectral response depicted in Figure 2.</p>
 
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176540867-f9cf8994-1b4b-4062-a9c6-6d6907028b9f.png" width="550"> </p>
-<p align=center> <b> Figure 2: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of all water pixels after atmospheric correction.
+<p align=center> <b> Figure 2:</b> Spectral reflectance of all water pixels captured by the Sentinel-2, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 
-- **Plastic**
-<p align=justify> Floating plastic debris data are scarce. We gathered 206 pixels of plastic that are confirmed by scientific reports, news articles or pictures on
-	social media posts (in situ data). Every pixel's spectral response was manually inspected and compared to the expected spectral signature in the
-	literature <b>[1]</b>, <b>[4]</b>, and the ones that did not meet the requirements were rejected. Therefore, many pixels identified as suspected
-	plastic in scientific reports were discarded. From the 206 pixels, 102 were taken from Sentinel-2A images and 107 from Sentinel-2B imagery.
-	Around 42% of the data, corresponding to 88 pixels, are from artificial plastic targets deployed in the ocean in the Gulf of Gera <b>[5]</b>, 
-	Tsamakia beach <b>[6]</b>, <b>[7]</b>, and Limassol <b>[8]</b>. The remaining 58% result from 
-	observations and reports of plastic floating in the marine environment. On the 23$^{rd}$ of April 2019, substantial quantities of plastic covered
-	the Durban harbour, in South Africa, after a flood event. The debris eventually washed out to the sea, and a Sentinel-2 image
-	from the following day allowed the detection of 72 pixels with spectral reflectance similar to plastic. The remaining pixels result from the work
-	of Kikaki et al. <b>[9]</b> and their observations over the Bay Islands and Gulf of Honduras.
+- #### Plastic
+<p align=justify> Data related to floating plastic debris are scarce. We gathered 206 pixels of suspect plastic that were previously reported by scientific reports, news articles or pictures on social media posts. Every pixel's spectral response was manually inspected and compared to the expected spectral signature in the literature <b>[1]</b>, <b>[4]</b>. We followed a conservative approach and data samples that did not meet the requirements were rejected and removed from the training data set. From the 206 pixels, 102 were taken from Sentinel-2A images and 107 from Sentinel-2B imagery.
+Around 42% of the data, corresponding to 88 pixels, are from artificial plastic targets deployed in the ocean in the Gulf of Gera <b>[5]</b>, Tsamakia beach <b>[6]</b>, <b>[7]</b>, and Limassol <b>[8]</b>. The remaining 58% result from observations and reports of plastic floating in the marine environment. On the 23<sup>rd</sup> of April 2019, substantial quantities of plastic covered the Durban harbour, in South Africa, after a flood event. The debris eventually washed out to the sea, and a Sentinel-2 image from the following day allowed the detection of 72 pixels with spectral reflectance similar to plastic. The remaining pixels result from the work of Kikaki et al. <b>[9]</b> and their observations over the Bay Islands and Gulf of Honduras.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176547565-494e5e0d-adc4-4cc2-9e1d-92d6400a1162.png" width="550"> </p>
-<p align=center> <b> Figure 3: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of plastic pixels after atmospheric correction.
+<p align=center> <b> Figure 3: </b> Comparison between the spectral reflectance of all suspect plastic pixels and all water pixels captured by the Sentinel-2, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 	
-<p align=justify> The spectral signature of plastic is characterized by two reflectance peaks, one centred at <b>B3</b> and the other at <b>B8</b>, and one absorption peak centred at the fifth Sentinel-2 spectral band (<b>B5</b>). It is also clear that plastic has higher reflectance values in all spectral bands compared to the water spectral signature.
+<p align=justify> In our spectral library, the mean spectrum for plastic computed from the 206 individual pixels is characterized by two reflectance peaks, one centred at <b>B3</b> and the other at <b>B8</b>, and one absorption peak centred at the fifth Sentinel-2 spectral band (<b>B5</b>). Furthermore, these plastic-like debris have higher reflectance values in all spectral bands compared to the water spectral response.
 	
-- **Driftwood**
-
+- #### Driftwood
 <p align=justify> Driftwood is wood that has been washed into the ocean through the action of natural occurrences such as winds or flooding, or because of logging. Its study is of great interest in many research fields. For example, in geomorphology, knowing the accumulation rates of wood in rivers may help in creating measures concerning the maintenance of watercourses and assist in risk management. However, it is challenging to find these pixels in Sentinel-2 images since it is not common to exist significant accumulations of driftwood. 
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548225-dc41767e-bc94-4729-98c1-30e23225703d.png" width="550"> </p>
-<p align=center> <b> Figure 4: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of driftwood after atmospheric correction.
+<p align=center> <b> Figure 4: </b> Comparison between the spectral reflectance of all suspect plastic pixels and all driftwood pixels captured by the Sentinel-2, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 	
 <p align=justify> PLP 2021 <b>[5]</b> allowed the collection of 62 pixels of driftwood on thirteen different days since they deployed a wooden target that simulates natural driftwood. Around 55% of these pixels were taken from Sentinel-2A images and the remaining from Sentinel-2B. Driftwood shows substantially more reflectance when compared to water or plastic, and it has two reflectance peaks in the fourth (<b>B4</b>) and eighth (<b>B8</b>) Sentinel-2 spectral bands.
 	
-- **Seaweed**
-	
+- #### Seaweed
 <p align=justify> Seaweed is the common name for countless species of marine plants and algae that grow in the ocean. There are several types of seaweed, but the most prevalent is the Sargassum or brown algae, which floats in large masses and even inspired the name of a region in the Atlantic Ocean, the Sargasso Sea. Its presence in the ocean is essential since it provides nutrients and shelter for many marine organisms, but too much seaweed can be harmful. Substantial accumulations of seaweed may block sunlight, preventing the seagrass below from growing and, when decomposing, its organic matter removes oxygen from the water. This work does not focus on differentiating the distinct species of seaweed, as its goal is to discriminate floating debris, and considerable variations in the various seaweed reflectance are not expected. One Sentinel-2B image from October 2018 was used to collect 150 pixels of seaweed in the coastal waters of Accra, Ghana. The seaweed's spectral signature coincides with the literature <b>[1]</b>, <b>[4]</b> since it presents a sharp increase in reflectance in the fourth Sentinel-2 spectral band (<b>B4</b>), followed by a fall in the band <b>8A</b>, being very distinct from the spectral responses of water, plastic and driftwood. Also, the standard deviation reveals that there is not much dispersion in the data relative to the mean before the reflection peak.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548273-9c0736bf-9789-4099-8c86-b34f73d35d67.png" width="550"> </p>
-<p align=center> <b> Figure 5: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of seaweed after atmospheric correction.
+<p align=center> <b> Figure 5: </b> Comparison between the spectral reflectance of all suspect plastic pixels and all seaweed pixels captured by the Sentinel-2, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 	
 <p align=justify> 
 	
-- **Pumice**
-	
+- #### Pumice
 <p align=justify> Pumice is a light-coloured volcanic rock with a foamy appearance. It is formed when super-heated and highly pressurized molten rock, magma, is powerfully ejected from a volcano and rapidly cools down, which commonly happens in underwater eruptions. Pumice is so light that it may float on water for years, potentially forming gigantic floating islands (pumice rafts). These pumice rafts are considered a danger to navigation since they can cause damage to cargo vessels and mess up with radar signals. For example, tankers carry thousands of tonnes of oil and, if damaged from a collision, can provoke a massive environmental disaster. Hence, information on the location and course of pumice rafts can be valuable for the shipping industry.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548351-9c14f5d6-976d-4bd3-b65a-2633c8397388.png" width="550"> </p>
-<p align=center> <b> Figure 6: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of pumice and plastic after atmospheric correction.
+<p align=center> <b> Figure 6: </b> Comparison between the spectral reflectance of all suspect plastic pixels and all pumice pixels captured by the Sentinel-2, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 	
 <p align=justify> In October 2021, a large underwater volcanic eruption spewed massive amounts of floating pumice stones that littered coastlines in Okinawa, Japan, damaging dozens of fishing vessels and forcing a large percentage to remain stuck at ports. A Sentinel-2A image from 26 October 2021 reveals thousands of bright pixels containing floating pumice stone and was used to collect 31098 pixels of this floating material. Pumice's reflectance values are close to the plastic mean spectral signature. However, plastic presents an absorption peak in the fifth spectral band (<b>B5</b>), which does not happen with pumice. Pumice's standard deviation reveals a lot of dispersion relative to the mean reflectance, which may be a consequence of different floating depths in different pixels. Pixels where pumice floats on the ocean's surface will have higher reflectance values than ones where pumice is slightly submerged.
 	
-- **Sea Snot**
-	
-<p align=justify> Marine mucilage, also known as sea snot, is a thick slimy organic substance that floats on the ocean. It forms when algae are overloaded with nutrients because of global warming and water pollution that results from industrial waste dumped into the seas. Warmer and slower-moving waters also increase the production of sea snot and allow its accumulation. Marine mucilage surge poses severe threats to public health since it contains bacteria, transports diseases, and has adverse economic and environmental consequences. This substance harshly affects the fishing industry as it clogs fishing nets, removes oxygen from the water and limits sunlight from reaching marine ecosystems, killing sea creatures. There are several reports of sea snot outbreaks in the last few years, however, none of them reaches the level of the one in the Marmara Sea, Turkey, in 2021. Short-term countermeasures include laying barriers on the sea surface and collecting the substance. On the other hand, long-term countermeasures comprise improving wastewater treatment and imposing fines on companies that dump industrial waste in the ocean. 
+- #### Sea Snot
+<p align=justify> Marine mucilage, also known as sea snot, is a thick slimy organic substance that floats on the ocean. Its formation is linked to global warming and water pollution resulting from the discharge of industrial waste into the seas, which overloads algae with nutrients. Sea snot thrives in warmer and slower-moving waters, and its accumulation poses severe threats to public health due to the presence of bacteria and diseases, in addition to having adverse environmental and economic impacts. This substance negatively affects the fishing industry by clogging fishing nets, reducing oxygen levels in the water, and blocking sunlight, which kills marine life. Several outbreaks of sea snot have been reported in recent years, but none have reached the magnitude of the one in the Marmara Sea, Turkey, in 2021. Short-term countermeasures, such as laying barriers on the sea surface and collecting the substance, are available. Long-term countermeasures include enhancing wastewater treatment and imposing fines on companies that discharge industrial waste into the ocean.</p>
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548391-de3c86e2-b49f-46fd-9d4a-98019925baa1.png" width="550"> </p>
-<p align=center> <b> Figure 7: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of sea snot and plastic after atmospheric correction.
+<p align=center> <b> Figure 7: </b> Spectral reflectances of sea snot and suspect plastic pixels, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 	
-<p align=justify> One Sentinel-2B image from the Marmara Sea, on the 6$^{th}$ of June 2021, showed thousands of pixels containing sea snot. From those, 26403 pixels were selected. By examining Figure 7, it is clear why Hu et al. <b>[10]</b> concluded that remote differentiation of sea snots and marine debris using multi-band sensors is problematic. The two classes show a similar mean spectral reflectance, except in the eighth Sentinel-2 spectral band (<b>B8</b>), where plastics have a reflectance peak. In contrast to plastic, sea snot's standard deviation reveals a lot of dispersion, which probably results from different floating depths in different pixels, just like pumice.
+<p align=justify> One Sentinel-2B image from the Marmara Sea, on the 6<sup>th</sup> of June 2021, showed thousands of pixels containing sea snot. From those, 26403 pixels were selected. By examining Figure 7, it is clear why Hu et al. <b>[10]</b> concluded that remote differentiation of sea snots and marine debris using multi-band sensors is problematic. The two classes show a similar mean spectral reflectance, except in the eighth Sentinel-2 spectral band (<b>B8</b>), where plastics have a reflectance peak. In contrast to plastic, sea snot's standard deviation reveals a lot of dispersion, which probably results from different floating depths in different pixels, just like pumice.
 	
-- **Sea Foam**
-	
-<p align=justify> The model from Biermann et al. <b>[1]</b> showed some difficulties in distinguishing plastic from sea foam, bubbles, and froth, so this group of substances was included in this study. A Sentinel-2A image from Vigo Ria in Galicia, Spain, was used to gather 2735 pixels and study sea foam's spectral behaviour. Sea foam presents a small reflectance peak in the early spectral bands and another one in the eighth Sentinel-2 band (<b>B8</b>), just like the plastic mean spectral signature. These features, adding to the relatively high standard deviation, suggest that sea foam might be confused with plastic.
+- #### Sea Foam
+<p align=justify> The model from Biermann et al. <b>[1]</b> showed some difficulties in distinguishing plastic from sea foam, bubbles, and froth, so this group of substances was included in this study. To examine the spectral behaviour of sea foam, a Sentinel-2A image from Vigo Ria in Galicia, Spain, was utilized, resulting in 2735 pixels. Sea foam's spectral response displays a small reflectance peak in the early spectral bands and another one in the eighth Sentinel-2 band (<b>B8</b>), similar to the mean spectral response of plastic. This similarity, coupled with the relatively high standard deviation, suggests that sea foam may be misidentified as plastic.
 	
 <p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548420-cba2b7ce-3aed-475a-941f-9ef46d67bab6.png" width="550"> </p>
-<p align=center> <b> Figure 8: </b> Spectral reflectance (mean - line, and standard deviation - shaded area) of pixels of sea foam and plastic after atmospheric correction.
+<p align=center> <b> Figure 8:</b> Spectral reflectance of sea foam pixels, after atmospheric correction. The line represents the mean spectral reflectance, whereas the shaded area represents the standard deviation.
 	
 ### Summary
+<p align=justify>Using data collected from common floating materials such as seaweed, sea foam, and driftwood, alongside substances that can cause harmful environmental effects, such as sea snot and pumice, it is possible to compare the spectral responses of all materials to plastic. Both driftwood and seaweed display a high level of reflectance in the eighth Sentinel-2 spectral band, enabling them to be distinguished from other materials. Additionally, driftwood exhibits a reflectance peak, whereas seaweed displays an absorption peak, making them distinguishable from each other as well. Water, due to its high heat capacity, has lower reflectance than all other classes. However, differentiating between plastic, pumice, sea snot, and sea foam based on spectral responses can be challenging. Therefore, utilizing spectral indices, which are mathematical equations that combine values from two or more wavelengths, enhances the spectral features that were not initially visible and is deemed appropriate.</p>
 	
-<p align=justify> With all data gathered from common floating classes such as seaweed, sea foam and driftwood, and from substances that, despite not being so common, can provoke harmful environmental consequences such as sea snot and pumice, it is possible to compare all spectral signatures to plastic. Both driftwood and seaweed have very high reflectance in the eighth Sentinel-2 spectral band, making them distinguishable from all other materials. Driftwood has a reflectance peak where seaweed has an absorption peak, so they are also distinct from each other. As expected, water has lower reflectance than all other classes thanks to its high heat capacity. On the other hand, separating plastic from pumice, sea snot, and sea foam based on spectral responses is challenging. Therefore, using spectral indices, which are mathematical equations that combine values from two or more wavelengths enhancing spectral features that were not visible initially, is appropriate.
-	
-<p align=center> <img src="https://user-images.githubusercontent.com/106109897/176548705-ef6f5da1-1339-466a-9a01-aecb4f4f0106.png" width="650"> </p>
-<p align=center> <b> Figure 9: </b> Spectral signatures derived from the mean reflectance of all data after atmospheric correction.
+<p align=center> <img src="images/reflectances.png" width="650"> </p>
+<p align=center> <b> Figure 9:</b> Mean spectral responses of all data, after atmospheric correction.
 	
 ## Synthetic Data
+<p align=justify> Although efforts have been made to gather public domain samples of different floating materials, the number of samples obtained is still relatively small for automatic classification algorithms. To overcome this limitation, data augmentation methods are typically applied. These methods allow classification models to learn from a range of data that could not be collected during the data acquisition stage, making them more resilient and reducing the time-consuming process of collecting and labelling data. However, in this study, minor alterations such as rotating, cropping, zooming, or grayscaling the original data are not feasible, and modifying the values of the spectral bands may result in spectral responses that do not represent any floating class. To address the lack of floating marine debris data, we used Wasserstein Generative Adversarial Networks (WGAN) <b>[11]</b> to generate <b>50,000 synthetic pixels from each class</b> that replicate the patterns and features of the actual data. This allowed us to investigate whether artificial data sets could serve as a solution to this issue.</p>
 
-<p align=justify> Despite the efforts in gathering public domain samples of the different floating materials, the number of samples obtained is relatively small for automatic classification algorithms. A usual procedure to overcome this limitation is applying data augmentation methods. Data augmentation methods enable the classification models to learn from a variety of data that could not be gathered in the data acquisition step, making them more robust, and reducing the time-consuming process of collecting and labelling data. In this work, making minor changes in the original data, such as rotating, cropping, zooming or grayscaling is not possible, and slightly changing the values of the spectral bands may create spectral responses that do not represent any floating class. We used of a Wasserstein Generative Adversarial Network (WGAN) <b>[11]</b> to generate <b>1434 synthetic pixels from each class</b> that replicate patterns and features of the actual data, and to assess if artificial data sets are a solution for the lack of floating plastic data.
-	
-<p align=center> <img src="https://user-images.githubusercontent.com/106109897/176710844-a90f1229-e1ec-4603-90df-31a4fb7fff93.png" width="650"> </p>
-<p align=center> <b> Figure 10: </b> Comparison between mean (lines) and standard deviation (shaded areas) of the spectral reflectance values from every class of real pixels and synthetic pixels generated from a WGAN (in red).
-	
-## Data Sets and Python file
-<p align=center> Label = 1 (<b>WATER</b>), 2 (<b>PLASTIC</b>), 3 (<b>DRIFTWOOD</b>), 4 (<b>SEAWEED</b>), 5 (<b>PUMICE</b>), 6 (<b>SEA_SNOT</b>), 7 (<b>SEA_FOAM</b>).
-	
- > ALL_data.csv
-	
-	Data set that contains every pixel collected.
-	
- > BALANCED_data.csv
-	
-	Balanced data set that contains pixels from ALL_data.
+<p align=center><img src="images/synthetic_data_reflectance.png" width="650"></p>
+<p align=center><b>Figure 10:</b> Comparison between the mean values characterized by lines and the standard deviation represented by shaded areas of the spectral reflectance values from real and synthetic pixels produced using a WGAN (depicted in red).</p>
 
- > Train_data.csv
-	
-	Data set used to train the models in the testing phase.
-	
- > Test_data.csv
-	
-	Data set used to test the models in the testing phase.
-	
- > balanced_quality_data.csv
-	
-	1434 synthetic pixels from each class, generated from a WGAN.
-	
- > indices_and_order.py
-	
-	Inserts all spectral indices studied under the scope of this work in the selected data set, and orders the columns.
-	
+## Data Sets
+<p align=justify>This repository contains 5 data sets:
+
+- `all_data.csv`: contains all the pixels collected from all floating materials, resulting in a highly imbalanced dataset. The labels for this dataset are: 1 (water), 2 (plastic), 3 (driftwood), 4 (seaweed), 5 (pumice), 6 (sea snot), and 7 (sea foam).
+
+- `balanced_data.csv`: contains data from all floating classes, but has been balanced to reduce class imbalance. The labels for this dataset are the same as in `all_data.csv`.
+
+- `synthetic_data.csv`: contains 50,000 pixels from each class generated by a Wasserstein Generative Adversarial Network (WGAN). The labels for this dataset are the same as in `all_data.csv`.
+
+- `train.csv`: contains the data that was used to train different machine learning models. The labels for this dataset are the same as in `all_data.csv`.
+
+- `test.csv`: contains the data that was used to evaluate the performance of the trained models and select the best one. The labels for this dataset are the same as in `all_data.csv`.
+
+<p align=justify>Researchers can use these datasets to reproduce the experiments described in the paper or to develop new methods for detecting floating marine debris. Please refer to the paper for more information on the data collection and labeling process.
+
+The `src` directory contains a function, `add_indices`, which is implemented in `indices.py` and receives a dataframe of Sentinel-2 pixels. The function returns all the spectral indices tested in this work. Researchers can use this function to calculate spectral indices for their own datasets and experiments.
+
+## Citation
+*Soon.*
+
+## Acknowledgements
+<p align=justify>This work was supported by the AI Moonshot Challenge's first edition winner, project SMART, which was sponsored by the Portuguese Space Agency (PTSpace) in partnership with Fundação para a Ciência e Tecnologia (FCT), Unbabel, European Space Agency (ESA), Agência Nacional de Inovação (ANI), and Web Summit. Additionally, Leonardo Azevedo acknowledges the support provided by CERENA (strategic project FCT-UIDB/04028/2020).</p>
+
+## License
+<p align=justify>The data in this repository is distributed under the Creative Commons Attribution 4.0 International (CC-BY-4.0). See the LICENSE file for details.</p>
+
 <p align=right> <i><b>Authors</b>: Miguel M. Duarte and Leonardo Azevedo.</i>
 	
 ### References
