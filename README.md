@@ -12,6 +12,9 @@
 
 <em>Thank you for your interest in this project!</em>
 
+<p align=right>Miguel M. Duarte and Leonardo Azevedo
+
+
 ## Table of contents
 - [Satellite](#satellite)
 - [Data Pre-processing](#data-pre-processing)
