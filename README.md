@@ -14,6 +14,8 @@
 
 <p align=right>Miguel M. Duarte and Leonardo Azevedo
 
+## Citation
+<p align=justify> M. M. Duarte and L. Azevedo, "Automatic Detection and Identification of Floating Marine Debris Using Multispectral Satellite Imagery," in IEEE Transactions on Geoscience and Remote Sensing, vol. 61, pp. 1-15, 2023, Art no. 2002315, doi: 10.1109/TGRS.2023.3283607.</p>
 
 ## Table of contents
 - [Satellite](#satellite)
@@ -128,9 +130,6 @@ Around 42% of the data, corresponding to 88 pixels, are from artificial plastic 
 <p align=justify>Researchers can use these datasets to reproduce the experiments described in the paper or to develop new methods for detecting floating marine debris. Please refer to the paper for more information on the data collection and labeling process.
 
 The `src` directory contains a function, `add_indices`, which is implemented in `indices.py` and receives a dataframe of Sentinel-2 pixels. The function returns all the spectral indices tested in this work. Researchers can use this function to calculate spectral indices for their own datasets and experiments.
-
-## Citation
-*Soon.*
 
 ## Acknowledgements
 <p align=justify>This work was supported by the AI Moonshot Challenge's first edition winner, project SMART, which was sponsored by the Portuguese Space Agency (PTSpace) in partnership with Fundação para a Ciência e Tecnologia (FCT), Unbabel, European Space Agency (ESA), Agência Nacional de Inovação (ANI), and Web Summit. Additionally, Leonardo Azevedo acknowledges the support provided by CERENA (strategic project FCT-UIDB/04028/2020).</p>
