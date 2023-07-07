@@ -1,6 +1,6 @@
 <p align=center><img src="https://user-images.githubusercontent.com/106109897/176538014-233c50c4-3c7d-43ea-87f1-e343f96c8a77.jpg"></p>
 
-# [*Data*] Automatic Detection and Identification of Floating Marine Debris Using Multi-Spectral Satellite Imagery
+# [*Data*] Automatic Detection and Identification of Floating Marine Debris Using Multispectral Satellite Imagery
 <p align=justify> Floating plastic debris that drift autonomously in our oceans are a significant environmental threat to marine life and ecosystems, making it crucial to develop and implement efficient tools to detect, capture, and eliminate such pollution from our oceans.</p>
 
 <p align=justify> Earth observation data have shown early promising results to detect marine plastic debris accumulations (e.g. <b>[1]</b>, <b>[2]</b>). Satellites are a reliable source of data due to their spatial and temporal resolution, extensive coverage, and efficiency in covering vast areas without human interaction. However, the automatic classification of floating plastic debris from satellite data is not simple, and supervised classification methods depend heavily on the availability of training samples.</p>
